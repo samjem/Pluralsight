@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class ActivityRepositoryStub implements ActivityRepository {
     
     public List<Activity> findAllActivities() {
+        
         List<Activity> activities = new ArrayList<Activity>();
         
         Activity activity1 = new Activity();
@@ -37,6 +38,11 @@ public class ActivityRepositoryStub implements ActivityRepository {
     }
     
     public Activity findActivity(String activityId) {
+        
+         if(activityId.equals("7777")) {
+             return null; //null test
+         }
+        
         Activity activity1 = new Activity();
         
         activity1.setId("1234");
@@ -52,6 +58,8 @@ public class ActivityRepositoryStub implements ActivityRepository {
         return activity1;
     }
     
-    
+    public void create(Activity activity){
+        //insert into db
+    }
     
 }
